@@ -1994,7 +1994,7 @@
 			}
 		],
 		"music": {
-			"audio": "http://qnvideo.hunliji.com/o_1bo9vjd7m5pd1gl115gmbou9k14.mp3",
+			"audio": "/mp3/bg.mp3",
 			"img": "http://qnm.hunliji.com/o_1cnoedjr21hlqoja1om215mf1orau.png",
 			"close_img": "http://qnm.hunliji.com/o_1cnoedmi8n1a8ga1al9k325b913.png"
 		},
