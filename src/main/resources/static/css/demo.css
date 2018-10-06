@@ -136,3 +136,7 @@ p {
     font-weight: normal;
     font-family: ¿¬Ìå
 }
+
+.guset_icon > p {
+    margin-top: 0;
+}
