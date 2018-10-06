@@ -1,0 +1,263 @@
+@charset "UTF-8";
+@keyframes rotate30deg {
+    from {
+        transform-origin: center;
+        transform: none;
+    }
+
+    to {
+        transform-origin: center;
+        transform: rotate3d(0, 0, 1, 30deg);
+    }
+}
+.rotate30deg{
+    animation-name: rotate30deg;
+}
+
+@keyframes fadeInDown30per {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.fadeInDown30per {
+    animation-name: fadeInDown30per;
+}
+
+@keyframes fadeInDown70per {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -70%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.fadeInDown70per {
+    animation-name: fadeInDown70per;
+}
+
+@keyframes fadeInLeft30per {
+    from {
+      opacity: 0;
+      transform: translate3d(-30%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInLeft30per {
+    animation-name: fadeInLeft30per;
+}
+
+@keyframes fadeInLeft70per {
+    from {
+      opacity: 0;
+      transform: translate3d(-70%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInLeft70per {
+    animation-name: fadeInLeft70per;
+}
+
+@keyframes fadeInRight30per {
+    from {
+      opacity: 0;
+      transform: translate3d(30%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInRight30per {
+    animation-name: fadeInRight30per;
+}
+
+@keyframes fadeInRight70per {
+    from {
+      opacity: 0;
+      transform: translate3d(70%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInRight70per {
+    animation-name: fadeInRight70per;
+}
+
+@keyframes fadeInUp30per {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 30%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInUp30per {
+    animation-name: fadeInUp30per;
+}
+
+@keyframes fadeInUp70per {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 70%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}
+.fadeInUp70per {
+    animation-name: fadeInUp70per;
+}
+
+@keyframes curveDownToLeft100per {
+    from {
+      opacity: 0;
+      transform: rotateZ(-40deg) translate3d(0, 100%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveDownToLeft100per {
+    animation-name: curveDownToLeft100per;
+}
+@keyframes curveDownToLeft500per {
+    from {
+      opacity: 0;
+      transform: rotateZ(-40deg) translate3d(0, 500%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveDownToLeft500per {
+    animation-name: curveDownToLeft500per;
+}
+
+@keyframes curveDownToRight100per {
+    from {
+      opacity: 0;
+      transform: rotateZ(40deg) translate3d(0, 100%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveDownToRight100per {
+    animation-name: curveDownToRight100per;
+}
+
+@keyframes curveDownToRight500per {
+    from {
+      opacity: 0;
+      transform: rotateZ(40deg) translate3d(0, 500%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveDownToRight500per {
+    animation-name: curveDownToRight500per;
+}
+
+@keyframes curveUpToLeft100per {
+    from {
+      opacity: 0;
+      transform: rotateZ(-40deg) translate3d(0, -100%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveUpToLeft100per {
+    animation-name: curveUpToLeft100per;
+}
+
+@keyframes curveUpToLeft500per {
+    from {
+      opacity: 0;
+      transform: rotateZ(-40deg) translate3d(0, -500%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveUpToLeft500per {
+    animation-name: curveUpToLeft500per;
+}
+
+@keyframes curveUpToRight100per {
+    from {
+      opacity: 0;
+      transform: rotateZ(40deg) translate3d(0, -100%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveUpToRight100per {
+    animation-name: curveUpToRight100per;
+}
+
+@keyframes curveUpToRight500per {
+    from {
+      opacity: 0;
+      transform: rotateZ(40deg) translate3d(0, -500%, 0); 
+    }
+  
+    to {
+        transform: none; 
+        opacity:1
+    }
+}
+
+.curveUpToRight500per {
+    animation-name: curveUpToRight500per;
+}
+

@@ -1,0 +1,138 @@
+body, ul {
+	margin: 0;
+	padding: 0
+}
+
+ul {
+	list-style: none
+}
+
+p {
+	margin-top: 40px
+}
+
+.container {
+	margin: 0 auto;
+	width: 940px
+}
+
+.roll-wrap:hover .control {
+	display: block
+}
+
+.roll-wrap {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	overflow: hidden
+}
+
+.roll-wrap .roll__list {
+	
+}
+
+.roll_row .roll__list::before, .roll_row .roll__list::after {
+	content: "";
+	display: table;
+	line-height: 0
+}
+
+.roll_row .roll__list::after {
+	clear: both
+}
+
+.roll_row .roll__list {
+	width: 9999px
+}
+
+.roll_row .roll__list li {
+	float: left;
+	display: block;
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	color: #fff;
+	background-color: #f90
+}
+
+.control {
+	position: absolute;
+	top: 30px;
+	display: none;
+	padding: 10px 5px;
+	font-weight: 700;
+	text-decoration: none;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.control:hover {
+	background-color: rgba(0, 0, 0, .5)
+}
+
+.control.pre {
+	left: 5px
+}
+
+.control.next {
+	right: 5px
+}
+
+.roll_col {
+	width: 100%;
+	height: 200px;
+	overflow: hidden
+}
+
+.roll_col .roll__list {
+	width: 100%
+}
+
+.h600 {
+	height: 600px
+}
+
+.roll_col li {
+	display: block;
+	height: 200px;
+	line-height: 200px;
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	color: #000;
+	/* background-color: #f90 */
+}
+
+.roll_col .li-2 {
+	/* background-color: #09f */
+}
+
+.roll_col .li-3 {
+	/* background-color: #f09 */
+}
+
+.roll_col .li-4 {
+	/* background-color: #0f9 */
+}
+
+.roll_col .control {
+	top: 80px
+}
+.roll-li{
+	text-align: left !important;
+}
+
+.roll-li > p{
+	height: 3rem;
+    margin-top: 0;
+    margin-left: 5%;
+    font-size: 1rem;
+    line-height: 3rem;
+    width: 85%;
+    font-weight: normal;
+    font-family: Ώ¬Με
+}

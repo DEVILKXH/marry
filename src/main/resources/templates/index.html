@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我们结婚啦</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,  user-scalable=0,,minimal-ui">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="css/wrap_common.css">
+		<link rel="stylesheet" href="css/card_main.min.css?v=20171017">
+		<link rel="stylesheet" href="css/animate_old_v1.0.css">
+		<link rel="stylesheet" href="css/animate.min_v1.0.css">
+		<link rel="stylesheet" href="css/animate_other_v1.0.css">
+		<link rel="stylesheet" href="css/hlj_animate.css?v=20171018">
+		<link rel="stylesheet" href="css/demo.css?v=20171018">
+		<link rel="icon" href="http://qnm.hunliji.com/o_1ah8sh0g58hqcgc1sfm1clv1t34c.ico" type="image/x-icon">
+		<style>
+			.back_v2 {
+				width: 30px;
+				height: 30px;
+				position: fixed;
+				top: 15px;
+				left: 15px;
+				z-index: 9999;
+				display: none;
+			}
+
+			.new_box {
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				z-index: 9999;
+				display: none;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				background: #f83244;
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			.new_box a {
+				display: block;
+				color: #fff;
+			}
+
+			#createBtn {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				background: #f83244;
+				line-height: 50px;
+				font-size: 17px;
+				z-index: 9999;
+				font-weight: bold;
+			}
+
+			#createBtn a {
+				display: block;
+				color: #fff;
+			}
+
+			.fill {
+				height: 34px;
+				background: #f8fcfb;
+				display: none;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<audio id="playMusic" loop="" src="//qnvideo.hunliji.com/o_1bo9vjd7m5pd1gl115gmbou9k14.mp3"></audio>
+
+		<div class="back_v2" onclick="history.go(-1)" style="display: none;">
+			<img src="http://qnm.hunliji.com/o_1c1mmtbvm1ne71b46vpl13ga2gs8.png">
+		</div>
+		<div class="new_box" style="display: none;">
+			<a href="http://www.hunliji.com/p/wedding/Public/wap/activity/20170306download.html?id=263" rel="nofollow">开始免费制作</a>
+		</div>
+
+
+		<script src="js/jquery.min.js?v=20180410"></script>
+		<script src="js/rollSlide.js?v=20180410"></script>
+		<script src="js/util.js?v=20180410"></script>
+		<script src="js/zepto.min_v20170710.js"></script>
+		<!-- <script src="//ocafkzd89.qnssl.com/jweixin-1.0.0.js"></script> -->
+		<script src="js/jweixin-1.3.2.js"></script>
+		<script src="js/base64.min.js"></script>
+		<script src="js/wxShare_new_v20170710.js"></script>
+		<script src="js/hammer.min_v20170710.js"></script>
+		<script src="js/demo_main_new.js?v=20180410"></script>
+		<div class="roll-wrap roll_col" id="c" style="position: absolute; top: 30%;left: 0;width: 100%;z-index: 100;">
+			<ul class="roll__list" style="position: absolute" id="roll-info">
+			</ul>
+		</div>
+		<div id="other">
+		</div>
+	</body>
+	<script type="text/javascript">
+    $(function(){
+    	$post({
+    		url: '/index/getCongratulation',
+    		callback: function(res){
+    			var html = "<li class='roll-li li-1'>";
+    			$(res).each(function(i, item){
+    				var r = i % 4;
+    				if(r == 0 && i != 0){
+						html += "</li><li class='roll-li li-"+ (r + 1) +"'>"    				
+    				}
+    				html += "<p>"+ item.name +"&nbsp;&nbsp;&nbsp;"+ item.congratulation +"</p>"
+    			});
+    			$("#roll-info").html(html);
+				$('#c').rollNoInterval().top();
+    		}
+    	})
+    });
+
+	</script>
+</html>
