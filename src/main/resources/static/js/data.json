@@ -911,7 +911,7 @@
 							"animate": [
 								"fadeInRight"
 							],
-							"img": "/images/marry10.jpg",
+							"img": "/images/marry16.jpg",
 							"delay": [
 								"1500"
 							],
@@ -1155,7 +1155,7 @@
 							"animate": [
 								"fadeIn"
 							],
-							"img": "/images/marry15.jpg",
+							"img": "/images/marry12.jpg",
 							"delay": [
 								"500"
 							],
@@ -1766,7 +1766,7 @@
 							"animate": [
 								"fadeIn"
 							],
-							"img": "/images/marry16.jpg",
+							"img": "/images/marry10.jpg",
 							"delay": [
 								"200"
 							],
@@ -2016,7 +2016,7 @@
 							"animate": [
 								"fadeIn"
 							],
-							"img": "/images/marry12.jpg",
+							"img": "/images/marry9.jpg",
 							"delay": [
 								"000"
 							],
