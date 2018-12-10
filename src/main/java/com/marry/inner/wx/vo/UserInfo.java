@@ -6,21 +6,21 @@ public class UserInfo {
 	
 	private String errmsg;
 	
-	private String userid;
+	private String openid;
 	
-	private String name;
+	private String nickname;
 	
-	private String mobile;
+	private String sex;
 	
-	private String gender;
+	private String province;
 	
-	private String email;
+	private String city;
 	
-	private String avatar;
+	private String country;
 	
-	private String qr_code;
+	private String headimgurl;
 	
-	private String accessToken;
+	private String unionid;
 
 	public String getErrcode() {
 		return errcode;
@@ -38,67 +38,67 @@ public class UserInfo {
 		this.errmsg = errmsg;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getOpenid() {
+		return openid;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setOpenid(String openid) {
+		this.openid = openid;
 	}
 
-	public String getName() {
-		return name;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
-	public String getMobile() {
-		return mobile;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getProvince() {
+		return province;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setProvince(String province) {
+		this.province = province;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getCity() {
+		return city;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getAvatar() {
-		return avatar;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	public String getQr_code() {
-		return qr_code;
+	public String getHeadimgurl() {
+		return headimgurl;
 	}
 
-	public void setQr_code(String qr_code) {
-		this.qr_code = qr_code;
+	public void setHeadimgurl(String headimgurl) {
+		this.headimgurl = headimgurl;
 	}
 
-	public String getAccessToken() {
-		return accessToken;
+	public String getUnionid() {
+		return unionid;
 	}
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
+	public void setUnionid(String unionid) {
+		this.unionid = unionid;
 	}
 }

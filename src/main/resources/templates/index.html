@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<title>林亮基❤️林建英 婚礼请柬</title>
 		<meta name="keywords" content="">
-		<meta name="description" content="诚挚邀请您参加我们的婚礼，见证我们的爱情之路，共享美好时刻！">
 		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,  user-scalable=0,,minimal-ui">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,7 +19,7 @@
 		<link rel="stylesheet" href="css/demo.css?v=20171018">
 		<link rel="icon" href="http://qnm.hunliji.com/o_1ah8sh0g58hqcgc1sfm1clv1t34c.ico" type="image/x-icon">
 		
-   		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+   		<script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js?v=1"></script>
 		<script src="js/jquery.min.js?v=20180410"></script>
 		<script src="js/rollSlide.js?v=20180410"></script>
 		<script src="js/util.js?v=20180410"></script>
@@ -28,7 +27,10 @@
 		$post({
 			url: '/index/getWxconfig',
 			data: window.location.href,
-			callback: function(res){
+			callback: init
+		});
+		function init(){
+			function(res){
 				wx.config({
 				    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 	
@@ -40,46 +42,26 @@
 	
 				    signature: res.signature,// 必填，签名，见附录1
 					
-					url: window.location.href,
-	
-				    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+				    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 	
 				});
 				
-				var data = {
+				wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+					var data = {
 						title: '林亮基❤️林建英 婚礼请柬', // 分享标题
 						desc: '诚挚邀请您参加我们的婚礼，见证我们的爱情之路，共享美好时刻！', // 分享描述
 						link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-						imgUrl: 'http://www.lrans.xin/logo.jpg', // 分享图标
-						type: '', // 分享类型,music、video或link，不填默认为link
-						dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-						trigger: function (res) {
-				             // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-						},
-						success: function (res) {
-						    alert('分享成功');
-						},
-						cancel: function (res) {
-						  alert('分享失败');
-						},
-						fail: function (res) {
-						  alert(JSON.stringify(res));
-						}
+						imgUrl: 'http://www.lrans.xin/images/logo.jpg', // 分享图标
 					}
-					
-					wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-						wx.checkJsApi({ 
-							jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ'], 
-							success: function (res) { 
-							} 
-						}); 
-					    wx.onMenuShareAppMessage(data);
-					    wx.onMenuShareTimeline(data);
-					    wx.onMenuShareQQ(data);
-					});
+					wx.updateAppMessageShareData(data);
+					wx.updateTimelineShareData(data);
+				    wx.onMenuShareAppMessage(data);
+				    wx.onMenuShareTimeline(data);
+				    wx.onMenuShareQQ(data);
+					wx.onMenuShareQZone(data);
+				});
 			}
-		});
-		
+		}
 		
 		</script>
 		

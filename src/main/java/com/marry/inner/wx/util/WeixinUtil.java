@@ -13,9 +13,9 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -26,6 +26,7 @@ import com.marry.inner.wx.vo.AccessToken;
 import com.marry.inner.wx.vo.UserInfo;
 import com.marry.inner.wx.vo.UserTicketInfo;
 import com.marry.inner.wx.vo.WeChatJsapiTicket;
+import com.marry.inner.wx.vo.WeixinUser;
 
 
 /**
@@ -143,6 +144,7 @@ public class WeixinUtil {
 				accessToken.setToken(jsonObject.getString("access_token"));
 				accessToken.setExpiresIn(7200);
 			} catch (JSONException e) {
+				
 				accessToken = null;
 				// 获取token失败
 				log.error("获取token失败 errcode:{} errmsg:{}",
@@ -174,7 +176,7 @@ public class WeixinUtil {
 		WeChatJsapiTicket weChatJsapiTicket = null;
 		String requestUrl = "";
 		String jsapi_ticket_url ="";
-		if (StringUtils.isBlank(WeiXinWorkConstant.APPID)) {
+		if (StringUtils.isEmpty(WeiXinWorkConstant.APPID)) {
 			jsapi_ticket_url =APIConstant.MP_JSAPI_TICKET.getUrl();
 		}else{
 			jsapi_ticket_url =APIConstant.QY_JSAPI_TICKET.getUrl();
@@ -265,6 +267,20 @@ public class WeixinUtil {
 		UserInfo userInfo = JSONObject.toJavaObject(json, UserInfo.class);
 		System.out.println("获取用户信息成功:" + json);
 		return userInfo;
+	}
+
+	public static WeixinUser getOpenId(String code) {
+		String url = WeiXinWorkConstant.CODE_TO_OPENID.replace("APPID", WeiXinWorkConstant.APPID).replace("SECRET", WeiXinWorkConstant.SECRET).replace("CODE", code);
+		JSONObject json = httpRequest(url, "GET", null);
+		WeixinUser user = JSONObject.toJavaObject(json, WeixinUser.class);
+		return user;
+	}
+	
+	public static UserInfo getUserInfo(String code) {
+		WeixinUser user = getOpenId(code);
+		String url = WeiXinWorkConstant.CODE_TO_USERINFO.replace("ACCESS_TOKEN", user.getAccess_token()).replace("ACCESS_TOKEN", user.getOpenid());
+		JSONObject json = httpRequest(url, "GET", null);
+		return JSONObject.toJavaObject(json, UserInfo.class);
 	}
 }
 
